@@ -1,6 +1,6 @@
 # Omar Mostafa — Portfolio
 
-Personal portfolio of Omar Mostafa, full-stack & AI engineer.
+Personal portfolio of Omar Mostafa — AI engineer with a full-stack background.
 
 **Live:** https://omar122211.github.io/profile/
 

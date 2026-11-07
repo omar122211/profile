@@ -318,7 +318,7 @@
   function startWord() {
     const el = document.getElementById("hero-word");
     if (!el) return;
-    const words = ["DEVELOPER", "AI ENGINEER", "FULL STACK", "BUILDER"];
+    const words = ["AI ENGINEER", "DEVELOPER", "FULL STACK", "BUILDER"];
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&*/<>";
     let w = 0;
     setInterval(() => {

@@ -79,7 +79,7 @@
     `Hi! 👋 I'm ${esc(SITE.name.split(" ")[0])}. Ask me about my skills, projects or experience.`);
 
   add("About me", `${SITE.name} ${SITE.role} about`, "about who yourself introduce background omar name",
-    `I'm ${esc(SITE.name)}, a ${esc(SITE.role)} with ${SITE.yearsExperience} years of experience. I build products end to end — interface, API, database — and wire AI into them so they actually get smarter.`,
+    `I'm ${esc(SITE.name)} — ${esc(SITE.role)}, with ${SITE.yearsExperience} years of experience. I build products end to end — interface, API, database — and wire AI into them so they actually get smarter.`,
     [goto("about", "Read more about me")]);
 
   add("Years of experience", `${SITE.yearsExperience} years experience career`, "year experience long senior career",

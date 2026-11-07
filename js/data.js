@@ -5,7 +5,7 @@
 
 window.SITE = {
   name: "Omar Mostafa",
-  role: "Full-stack & AI Engineer",
+  role: "AI Engineer · Full-stack",
   yearsExperience: 4,
   available: true,      // shows "Available for new projects" in the hero
   // Anything left "" is hidden from the page automatically.
@@ -22,6 +22,10 @@ window.SITE = {
    cat: frontend | backend | mobile | ai | devops
    Skills marked "seen in repos" are backed by projects on GitHub. */
 window.SKILLS = [
+  { name: "scikit-learn",   cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-chart-line" },  // coursework (Karabük University)
+  { name: "pandas & NumPy", cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-table" },       // coursework (Karabük University)
+  { name: "ML Kit",         cat: "ai",       level: 3, years: 1, icon: "fa-solid fa-person-running" }, // seen in repos
+  { name: "LLM APIs",       cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-robot" },
   { name: "HTML & CSS",     cat: "frontend", level: 5, years: 4, icon: "fa-brands fa-html5" },      // seen in repos
   { name: "JavaScript",     cat: "frontend", level: 5, years: 4, icon: "fa-brands fa-js" },         // seen in repos
   { name: "TypeScript",     cat: "frontend", level: 4, years: 3, icon: "fa-solid fa-code" },
@@ -42,10 +46,6 @@ window.SKILLS = [
   { name: "Kotlin",         cat: "mobile",   level: 4, years: 1, icon: "fa-brands fa-android" },    // seen in repos
   { name: "Jetpack Compose", cat: "mobile",  level: 4, years: 1, icon: "fa-solid fa-mobile-screen" }, // seen in repos
   { name: "Room & CameraX", cat: "mobile",   level: 3, years: 1, icon: "fa-solid fa-camera" },      // seen in repos
-  { name: "scikit-learn",   cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-chart-line" },  // coursework (Karabük University)
-  { name: "pandas & NumPy", cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-table" },       // coursework (Karabük University)
-  { name: "ML Kit",         cat: "ai",       level: 3, years: 1, icon: "fa-solid fa-person-running" }, // seen in repos
-  { name: "LLM APIs",       cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-robot" },
   { name: "Git & GitHub",   cat: "devops",   level: 5, years: 4, icon: "fa-brands fa-github" },     // seen in repos
   { name: "GitHub Actions", cat: "devops",   level: 3, years: 1, icon: "fa-solid fa-infinity" },    // seen in repos
   { name: "Linux",          cat: "devops",   level: 4, years: 3, icon: "fa-brands fa-linux" },
@@ -53,10 +53,10 @@ window.SKILLS = [
 ];
 
 window.SKILL_CATS = {
+  ai: "AI & ML",
   frontend: "Frontend",
   backend: "Backend & Data",
   mobile: "Mobile",
-  ai: "AI & ML",
   devops: "DevOps & Tools",
 };
 
@@ -86,6 +86,20 @@ window.PROJECTS = [
     keywords: "android app mobile fitness workout habit gym solo leveling instagram block pose camera",
     links: { live: "", code: "" },
     cover: { kind: "phone", hue: 205 },
+  },
+  {
+    title: "This Portfolio",
+    tagline: "Hand-built, no frameworks",
+    cat: ["web", "ai"], year: 2026,
+    summary: "The site you're on: a particle portrait made from my photo, an \"Ask me\" search engine and an interactive terminal — hand-built and secured with a strict Content Security Policy.",
+    problem: "Templates all look the same, and portfolios rarely show how you actually build.",
+    solution: "Hand-built with vanilla JavaScript and canvas. The portrait is ~22k particles generated from a photo after AI background removal; the \"Ask me\" chat is a BM25 search engine over the site's own content; everything follows the OWASP cheat sheets (CSP, safe DOM updates, URL allow-lists).",
+    highlights: ["~22k-particle portrait at 60fps", "In-browser search engine (BM25)", "Strict CSP, no third-party requests", "Responsive from phone to desktop"],
+    stack: ["JavaScript", "Canvas", "CSS", "Python", "OWASP"],
+    keywords: "website site made dots particles portfolio security",
+    links: { live: "https://omar122211.github.io/profile/", code: "https://github.com/omar122211/profile" },
+    image: "assets/img/projects/portfolio.webp", // real screenshot of the hero
+    cover: { kind: "code", hue: 18 },
   },
   {
     title: "Coordinate Transformation Tool",
@@ -165,20 +179,6 @@ window.PROJECTS = [
       { src: "assets/img/projects/gym-members.webp", caption: "Admin: members table (no passwords shown)" },
     ],
     cover: { kind: "shop", hue: 130 },
-  },
-  {
-    title: "This Portfolio",
-    tagline: "Hand-built, no frameworks",
-    cat: ["web", "ai"], year: 2026,
-    summary: "The site you're on: a particle portrait made from my photo, an \"Ask me\" search engine and an interactive terminal — hand-built and secured with a strict Content Security Policy.",
-    problem: "Templates all look the same, and portfolios rarely show how you actually build.",
-    solution: "Hand-built with vanilla JavaScript and canvas. The portrait is ~22k particles generated from a photo after AI background removal; the \"Ask me\" chat is a BM25 search engine over the site's own content; everything follows the OWASP cheat sheets (CSP, safe DOM updates, URL allow-lists).",
-    highlights: ["~22k-particle portrait at 60fps", "In-browser search engine (BM25)", "Strict CSP, no third-party requests", "Responsive from phone to desktop"],
-    stack: ["JavaScript", "Canvas", "CSS", "Python", "OWASP"],
-    keywords: "website site made dots particles portfolio security",
-    links: { live: "https://omar122211.github.io/profile/", code: "https://github.com/omar122211/profile" },
-    image: "assets/img/projects/portfolio.webp", // real screenshot of the hero
-    cover: { kind: "code", hue: 18 },
   },
 ];
 
