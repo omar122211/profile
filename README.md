@@ -2,7 +2,7 @@
 
 Personal portfolio of Omar Mostafa, full-stack & AI engineer.
 
-**Live:** https://microbe233.github.io/profile/
+**Live:** https://omar122211.github.io/profile/
 
 ![Portfolio hero: a portrait made of glowing particles](assets/img/projects/portfolio.webp)
 

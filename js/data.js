@@ -12,7 +12,7 @@ window.SITE = {
   // The contact form only appears once "email" is filled in.
   links: {
     email: "omar.mostafa082002@gmail.com",
-    github: "https://github.com/microbe233",
+    github: "https://github.com/omar122211",
     linkedin: "https://www.linkedin.com/in/omar-mostafa-349239209/",
     cv: "",             // e.g. "assets/omar-mostafa-cv.pdf"
   },
@@ -58,7 +58,7 @@ window.SKILL_CATS = {
   devops: "DevOps & Tools",
 };
 
-/* PROJECTS — from github.com/microbe233. Newest first; the first one with featured: true gets the big card.
+/* PROJECTS — from github.com/omar122211. Newest first; the first one with featured: true gets the big card.
    cat: one or more of  mobile | ai | web | systems
    private: true  → shows "Code private" instead of a code link
    cover.kind: phone | map | camp | terminal | notebook | code   (or add  image: "assets/img/projects/x.webp")
@@ -95,7 +95,7 @@ window.PROJECTS = [
     highlights: ["Click-to-coordinate conversion with live hover preview", "Real aerial photo of Times Square with matching corner coordinates", "Copy result or open it in Google Maps", "Shows the full calculation for every click", "Responsive, dark UI with a strict Content Security Policy"],
     stack: ["JavaScript", "HTML", "CSS", "GitHub Pages"],
     keywords: "gps map coordinates latitude longitude aerial image drone geo",
-    links: { live: "https://microbe233.github.io/GPS/", code: "https://github.com/microbe233/GPS" },
+    links: { live: "https://omar122211.github.io/GPS/", code: "https://github.com/omar122211/GPS" },
     image: "assets/img/projects/gps-tool.webp", // real screenshot (aerial imagery: NYS ITS Geospatial Services)
     cover: { kind: "map", hue: 160 },
   },
@@ -135,7 +135,7 @@ window.PROJECTS = [
     highlights: ["Concurrent clients with pthreads", "Public and private messages", "CRC + checksum error detection", "Thread-safe client list"],
     stack: ["C", "TCP sockets", "POSIX threads", "Linux"],
     keywords: "chat server socket network networking c language terminal cli threads",
-    links: { live: "", code: "https://github.com/microbe233/Chat-Room" },
+    links: { live: "", code: "https://github.com/omar122211/Chat-Room" },
     cover: { kind: "terminal", hue: 140 },
   },
   {
@@ -148,7 +148,7 @@ window.PROJECTS = [
     highlights: ["~22k-particle portrait at 60fps", "In-browser search engine (BM25)", "Strict CSP, no third-party requests", "Responsive from phone to desktop"],
     stack: ["JavaScript", "Canvas", "CSS", "Python", "OWASP"],
     keywords: "website site made dots particles portfolio security",
-    links: { live: "https://microbe233.github.io/profile/", code: "https://github.com/microbe233/profile" },
+    links: { live: "https://omar122211.github.io/profile/", code: "https://github.com/omar122211/profile" },
     image: "assets/img/projects/portfolio.webp", // real screenshot of the hero
     cover: { kind: "code", hue: 18 },
   },
