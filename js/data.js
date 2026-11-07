@@ -40,8 +40,8 @@ window.SKILLS = [
   { name: "Kotlin",         cat: "mobile",   level: 4, years: 1, icon: "fa-brands fa-android" },    // seen in repos
   { name: "Jetpack Compose", cat: "mobile",  level: 4, years: 1, icon: "fa-solid fa-mobile-screen" }, // seen in repos
   { name: "Room & CameraX", cat: "mobile",   level: 3, years: 1, icon: "fa-solid fa-camera" },      // seen in repos
-  { name: "scikit-learn",   cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-chart-line" },  // seen in repos
-  { name: "pandas & NumPy", cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-table" },       // seen in repos
+  { name: "scikit-learn",   cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-chart-line" },  // coursework (Karabük University)
+  { name: "pandas & NumPy", cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-table" },       // coursework (Karabük University)
   { name: "ML Kit",         cat: "ai",       level: 3, years: 1, icon: "fa-solid fa-person-running" }, // seen in repos
   { name: "LLM APIs",       cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-robot" },
   { name: "Git & GitHub",   cat: "devops",   level: 5, years: 4, icon: "fa-brands fa-github" },     // seen in repos
@@ -137,20 +137,6 @@ window.PROJECTS = [
     keywords: "chat server socket network networking c language terminal cli threads",
     links: { live: "", code: "https://github.com/microbe233/Chat-Room" },
     cover: { kind: "terminal", hue: 140 },
-  },
-  {
-    title: "Machine Learning Lab",
-    tagline: "A semester of hands-on ML in Python",
-    cat: ["ai"], year: 2024, private: true,
-    summary: "Hands-on machine learning in Python — from cleaning data to classification, clustering and dimensionality reduction, on real datasets.",
-    problem: "Learn how classic ML algorithms behave on real data, not just in theory.",
-    solution: "A series of Jupyter notebooks working through the full workflow on datasets like Titanic, mushrooms, car evaluation and mall customers: exploring data with pandas and Seaborn/Plotly, training models with scikit-learn, and evaluating them properly. The cover shows customer segmentation with K-Means, choosing the number of clusters with the elbow method.",
-    highlights: ["Customer segmentation with K-Means", "KNN, Naive Bayes, SVM, decision trees, random forest", "K-fold cross-validation and confusion matrices", "Linear, multiple and logistic regression", "PCA for dimensionality reduction"],
-    stack: ["Python", "scikit-learn", "pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter"],
-    keywords: "machine learning ml data science notebook jupyter clustering kmeans classification regression model",
-    links: { live: "", code: "" }, // repo: github.com/microbe233/machinelearning (hidden until authorship is confirmed)
-    image: "assets/img/projects/ml-kmeans.webp",
-    cover: { kind: "notebook", hue: 265 },
   },
   {
     title: "This Portfolio",
