@@ -13,7 +13,6 @@
 
   const ctx = canvas.getContext("2d");
   const photo = document.getElementById("hero-photo");
-  const shadow = document.getElementById("hero-shadow");
   const revealBtn = document.getElementById("reveal-btn");
   const hint = document.getElementById("hero-hint");
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -97,9 +96,7 @@
       hx[i] = (box.x + (gx[i] + 0.5) * scale) * dpr;
       hy[i] = (box.y + (gy[i] + 0.5) * scale) * dpr;
     }
-    for (const el of [photo, shadow]) {
-      Object.assign(el.style, { left: box.x + "px", top: box.y + "px", width: box.w + "px", height: box.h + "px" });
-    }
+    Object.assign(photo.style, { left: box.x + "px", top: box.y + "px", width: box.w + "px", height: box.h + "px" });
     revealBtn.style.left = box.x + box.w / 2 + "px";
     revealBtn.style.top = Math.min(box.y + box.h * 0.78, H - 70) + "px";
   }

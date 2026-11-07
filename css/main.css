@@ -121,9 +121,7 @@ p { margin: 0 0 1em; }
   opacity: 0; transform: scale(1.06); transition: opacity 1.2s ease .2s, transform 1.6s cubic-bezier(.2, .7, .2, 1) .2s;
 }
 .is-live #hero-word { opacity: .92; transform: none; }
-.hero-shadow, .hero-photo { position: absolute; pointer-events: none; object-fit: contain; }
-.hero-shadow { z-index: 2; filter: brightness(0); opacity: 0; transition: opacity 1.4s ease 1s; }
-.is-live .hero-shadow { opacity: .96; }
+.hero-photo { position: absolute; pointer-events: none; object-fit: contain; }
 #hero-canvas { position: absolute; inset: 0; z-index: 3; }
 .hero-photo { z-index: 4; opacity: 0; }
 
