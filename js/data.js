@@ -31,6 +31,8 @@ window.SKILLS = [
   { name: "Node.js",        cat: "backend",  level: 4, years: 3, icon: "fa-brands fa-node-js" },    // seen in repos
   { name: "Express",        cat: "backend",  level: 4, years: 3, icon: "fa-solid fa-route" },       // seen in repos
   { name: "MongoDB",        cat: "backend",  level: 4, years: 3, icon: "fa-solid fa-leaf" },        // seen in repos
+  { name: "PHP",            cat: "backend",  level: 3, years: 2, icon: "fa-brands fa-php" },        // seen in repos (Fitness Abbas)
+  { name: "MySQL",          cat: "backend",  level: 3, years: 2, icon: "fa-solid fa-database" },   // seen in repos (Fitness Abbas)
   { name: "Supabase",       cat: "backend",  level: 3, years: 1, icon: "fa-solid fa-bolt" },        // seen in repos
   { name: "PostgreSQL",     cat: "backend",  level: 3, years: 2, icon: "fa-solid fa-database" },
   { name: "Python",         cat: "backend",  level: 4, years: 3, icon: "fa-brands fa-python" },     // seen in repos
@@ -137,6 +139,32 @@ window.PROJECTS = [
     keywords: "chat server socket network networking c language terminal cli threads",
     links: { live: "", code: "https://github.com/omar122211/Chat-Room" },
     cover: { kind: "terminal", hue: 140 },
+  },
+  {
+    title: "Fitness Abbas",
+    tagline: "Gym website with member accounts and an admin panel",
+    cat: ["web"], year: 2023,
+    summary: "A full gym website in PHP and MySQL: a public site with workouts, trainers and diet plans, member accounts with a personal dashboard, and an admin panel to manage members.",
+    problem: "A gym needs more than a brochure site: members should be able to sign up, pick a plan and follow their progress, and staff need a place to manage them.",
+    solution: "Built as a university web programming project: a public site (home, workout programs, trainers, diet plans, contact), sign-up and sign-in with plans of 3, 6 or 12 months, a member dashboard with progress charts and a profile, and an admin panel with a searchable members table to add, update and delete members. In 2026 I hardened it following the OWASP cheat sheets: prepared statements for every query, role-based access control, hashed passwords only, output escaping against XSS and secure session cookies — verified by 51 automated checks.",
+    highlights: [
+      "Public site, member dashboard and admin panel",
+      "Sign-up, sign-in, plans and password change",
+      "Admin: searchable members table, add / update / delete",
+      "Hardened per OWASP: prepared statements, access control, XSS escaping",
+      "Passwords hashed with password_hash(), never stored in plain text",
+    ],
+    stack: ["PHP", "MySQL", "JavaScript", "Bootstrap", "Chart.js"],
+    keywords: "gym fitness php mysql website members admin panel dashboard workout trainers diet abbas sql injection security owasp",
+    links: { live: "", code: "https://github.com/omar122211/webproject" },
+    image: "assets/img/projects/gym.webp", // real screenshots (run locally)
+    gallery: [
+      { src: "assets/img/projects/gym-workouts.webp", caption: "Workout programs" },
+      { src: "assets/img/projects/gym-signin.webp", caption: "Sign in" },
+      { src: "assets/img/projects/gym-admin.webp", caption: "Admin dashboard" },
+      { src: "assets/img/projects/gym-members.webp", caption: "Admin: members table (no passwords shown)" },
+    ],
+    cover: { kind: "shop", hue: 130 },
   },
   {
     title: "This Portfolio",

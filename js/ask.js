@@ -107,7 +107,7 @@
     "Jetpack Compose": "compose android ui", "Room & CameraX": "room camerax camera sqlite", "scikit-learn": "sklearn scikit",
     "pandas & NumPy": "pandas numpy dataframe", "ML Kit": "mlkit pose detection vision", "Supabase": "supabase auth",
     "C & Networking": "c socket sockets tcp network networking pthread threads",
-    "Auth & OAuth": "auth authentication login signup oauth passport google facebook session", "Stripe Payments": "stripe payment payments checkout", "GitHub Actions": "github action ci cd cicd pipeline workflow",
+    "Auth & OAuth": "auth authentication login signup oauth passport google facebook session", "Stripe Payments": "stripe payment payments checkout", "PHP": "php", "MySQL": "mysql mariadb sql", "GitHub Actions": "github action ci cd cicd pipeline workflow",
   };
   const LEVEL = ["", "learning it", "comfortable", "solid", "strong", "expert"];
   SKILLS.forEach((s) => {
