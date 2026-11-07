@@ -1,0 +1,9 @@
+# local tools & editor settings — never publish
+.claude/
+node_modules/
+.dist/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
