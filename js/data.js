@@ -88,14 +88,14 @@ window.PROJECTS = [
   {
     title: "Coordinate Transformation Tool",
     tagline: "Click a photo, get GPS coordinates",
-    cat: ["web"], year: 2025, private: true,
+    cat: ["web"], year: 2025,
     summary: "Click anywhere on an aerial photo and get the real-world GPS coordinates of that spot — calculated from the photo's four corner coordinates.",
     problem: "Aerial and drone images show a place, but not where each point in them is on the map.",
     solution: "A browser tool that maps pixel positions to latitude/longitude. You enter the image size and the GPS coordinates of its corners; the tool computes the scale (degrees per pixel) and converts any click on the image into coordinates, with the corner reference points drawn on the image. The demo uses a real 12 cm-per-pixel aerial photo of Times Square, cropped to exactly the area between the corner coordinates — so every click returns that spot's true location.",
     highlights: ["Click-to-coordinate conversion with live hover preview", "Real aerial photo of Times Square with matching corner coordinates", "Copy result or open it in Google Maps", "Shows the full calculation for every click", "Responsive, dark UI with a strict Content Security Policy"],
     stack: ["JavaScript", "HTML", "CSS", "GitHub Pages"],
     keywords: "gps map coordinates latitude longitude aerial image drone geo",
-    links: { live: "https://microbe233.github.io/GPS/", code: "" }, // repo: github.com/microbe233/GPS (hidden on the site for now)
+    links: { live: "https://microbe233.github.io/GPS/", code: "https://github.com/microbe233/GPS" },
     image: "assets/img/projects/gps-tool.webp", // real screenshot (aerial imagery: NYS ITS Geospatial Services)
     cover: { kind: "map", hue: 160 },
   },
@@ -128,14 +128,14 @@ window.PROJECTS = [
   {
     title: "Chat Room in C",
     tagline: "Multi-user chat server over TCP",
-    cat: ["systems"], year: 2024, private: true,
+    cat: ["systems"], year: 2024,
     summary: "A terminal chat server written in C: many users at once, public and private messages, and an integrity check on every message.",
     problem: "Understand how chat really works below the frameworks — sockets, threads and data integrity.",
     solution: "A TCP server that gives each connected client its own POSIX thread, with the client list protected by a mutex. Messages go to everyone or privately to one user. Each message carries a checksum and a CRC, which the server verifies to detect corrupted data before delivering it.",
     highlights: ["Concurrent clients with pthreads", "Public and private messages", "CRC + checksum error detection", "Thread-safe client list"],
     stack: ["C", "TCP sockets", "POSIX threads", "Linux"],
     keywords: "chat server socket network networking c language terminal cli threads",
-    links: { live: "", code: "" }, // repo: github.com/microbe233/Chat-Room (hidden until the repo is cleaned up)
+    links: { live: "", code: "https://github.com/microbe233/Chat-Room" },
     cover: { kind: "terminal", hue: 140 },
   },
   {
@@ -148,21 +148,21 @@ window.PROJECTS = [
     highlights: ["Customer segmentation with K-Means", "KNN, Naive Bayes, SVM, decision trees, random forest", "K-fold cross-validation and confusion matrices", "Linear, multiple and logistic regression", "PCA for dimensionality reduction"],
     stack: ["Python", "scikit-learn", "pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter"],
     keywords: "machine learning ml data science notebook jupyter clustering kmeans classification regression model",
-    links: { live: "", code: "" }, // repo: github.com/microbe233/machinelearning (hidden until the repo is cleaned up)
+    links: { live: "", code: "" }, // repo: github.com/microbe233/machinelearning (hidden until authorship is confirmed)
     image: "assets/img/projects/ml-kmeans.webp",
     cover: { kind: "notebook", hue: 265 },
   },
   {
     title: "This Portfolio",
     tagline: "Hand-built, no frameworks",
-    cat: ["web", "ai"], year: 2026, private: true,
+    cat: ["web", "ai"], year: 2026,
     summary: "The site you're on: a particle portrait made from my photo, an \"Ask me\" search engine and an interactive terminal — hand-built and secured with a strict Content Security Policy.",
     problem: "Templates all look the same, and portfolios rarely show how you actually build.",
     solution: "Hand-built with vanilla JavaScript and canvas. The portrait is ~22k particles generated from a photo after AI background removal; the \"Ask me\" chat is a BM25 search engine over the site's own content; everything follows the OWASP cheat sheets (CSP, safe DOM updates, URL allow-lists).",
     highlights: ["~22k-particle portrait at 60fps", "In-browser search engine (BM25)", "Strict CSP, no third-party requests", "Responsive from phone to desktop"],
     stack: ["JavaScript", "Canvas", "CSS", "Python", "OWASP"],
     keywords: "website site made dots particles portfolio security",
-    links: { live: "", code: "" }, // repo: github.com/microbe233/profile (hidden until the repo is cleaned up)
+    links: { live: "https://microbe233.github.io/profile/", code: "https://github.com/microbe233/profile" },
     image: "assets/img/projects/portfolio.webp", // real screenshot of the hero
     cover: { kind: "code", hue: 18 },
   },
