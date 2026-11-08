@@ -26,6 +26,9 @@ window.SKILLS = [
   { name: "pandas & NumPy", cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-table" },       // coursework (Karabük University)
   { name: "ML Kit",         cat: "ai",       level: 3, years: 1, icon: "fa-solid fa-person-running" }, // seen in repos
   { name: "LLM APIs",       cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-robot" },
+  { name: "RAG & embeddings", cat: "ai",     level: 4, years: 1, icon: "fa-solid fa-magnifying-glass" }, // seen in repos (gym-ai-assistant)
+  { name: "LangGraph agents", cat: "ai",     level: 3, years: 1, icon: "fa-solid fa-diagram-project" }, // seen in repos (gym-ai-assistant)
+  { name: "FastAPI",        cat: "backend",  level: 4, years: 1, icon: "fa-solid fa-bolt" },        // seen in repos (gym-ai-assistant)
   { name: "HTML & CSS",     cat: "frontend", level: 5, years: 4, icon: "fa-brands fa-html5" },      // seen in repos
   { name: "JavaScript",     cat: "frontend", level: 5, years: 4, icon: "fa-brands fa-js" },         // seen in repos
   { name: "TypeScript",     cat: "frontend", level: 4, years: 3, icon: "fa-solid fa-code" },
@@ -66,6 +69,33 @@ window.SKILL_CATS = {
    cover.kind: phone | map | camp | terminal | notebook | code   (or add  image: "assets/img/projects/x.webp")
    highlights: short bullet points shown on the card and in the case study */
 window.PROJECTS = [
+  {
+    title: "Gym AI Assistant",
+    tagline: "A multilingual AI receptionist that answers, books classes and remembers",
+    featured: true,
+    cat: ["ai", "web"], year: 2026,
+    summary: "An AI agent for the Fitness Abbas gym: members chat in Arabic, Turkish or English, and it answers from the gym's own knowledge base with sources, shows the timetable, books classes over several messages and files complaints for staff.",
+    problem: "A gym gets the same questions every day — prices, trainers, class times — in several languages, and a plain chatbot either knows nothing about the gym or confidently makes things up.",
+    solution: "A LangGraph agent behind a FastAPI service. Each message goes through a router (Gemini with Pydantic-validated structured output) that picks the intent and pulls out the class, day and name — using the conversation so far, so \"Friday works\" continues a booking. Questions go to a RAG pipeline: the knowledge base is embedded once in English with gemini-embedding-2 and stored in Chroma, so Arabic and Turkish questions still find the right sections; anything below a measured similarity cutoff is dropped and the model must answer only from the sources or say it doesn't know. Schedules, bookings and complaints are plain Python tools over SQLite — the model never writes SQL or decides availability. Memory is saved per conversation, a fallback model takes over when the main one is overloaded, and a 51-case evaluation set (3 languages, prompt-injection and multi-turn cases) measures it.",
+    highlights: [
+      "RAG with sources: Gemini embeddings + Chroma, similarity cutoff, \"I don't know\" instead of guessing",
+      "LangGraph agent: router → tools → reply, with memory per conversation",
+      "Books classes over several messages, files complaint tickets (SQLite tools)",
+      "Arabic, Turkish and English from one English knowledge base",
+      "51-case evaluation set incl. prompt injection and multi-turn memory",
+      "FastAPI + Streamlit, Docker Compose, 24 offline tests",
+    ],
+    stack: ["Python", "LangGraph", "Gemini API", "RAG", "Chroma", "FastAPI", "Pydantic", "Streamlit", "SQLite", "Docker"],
+    keywords: "ai agent chatbot assistant rag llm gemini langgraph retrieval embeddings vector chroma fastapi streamlit gym booking multilingual arabic turkish receptionist",
+    links: { live: "", code: "https://github.com/omar122211/gym-ai-assistant" },
+    image: "assets/img/projects/gym-ai.webp", // real screenshots of the Streamlit chat (run with Docker)
+    gallery: [
+      { src: "assets/img/projects/gym-ai-booking.webp", caption: "Booking over three messages, live timetable with free spots" },
+      { src: "assets/img/projects/gym-ai-multilingual.webp", caption: "Arabic schedule + Turkish question answered with sources" },
+      { src: "assets/img/projects/gym-ai-mobile.webp", caption: "On a phone" },
+    ],
+    cover: { kind: "code", hue: 22 },
+  },
   {
     title: "Forge",
     tagline: "A Solo Leveling–style fitness app that punishes skipped workouts",
