@@ -87,7 +87,7 @@ window.PROJECTS = [
     ],
     stack: ["Python", "LangGraph", "Gemini API", "RAG", "Chroma", "FastAPI", "Pydantic", "Streamlit", "SQLite", "Docker"],
     keywords: "ai agent chatbot assistant rag llm gemini langgraph retrieval embeddings vector chroma fastapi streamlit gym booking multilingual arabic turkish receptionist",
-    links: { live: "", code: "https://github.com/omar122211/gym-ai-assistant" },
+    links: { live: "", code: "" }, // add "https://github.com/omar122211/gym-ai-assistant" once the repo is public
     image: "assets/img/projects/gym-ai.webp", // real screenshots of the Streamlit chat (run with Docker)
     gallery: [
       { src: "assets/img/projects/gym-ai-booking.webp", caption: "Booking over three messages, live timetable with free spots" },
