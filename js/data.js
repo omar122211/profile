@@ -28,6 +28,7 @@ window.SKILLS = [
   { name: "LLM APIs",       cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-robot" },
   { name: "RAG & embeddings", cat: "ai",     level: 4, years: 1, icon: "fa-solid fa-magnifying-glass" }, // seen in repos (gym-ai-assistant)
   { name: "LangGraph agents", cat: "ai",     level: 3, years: 1, icon: "fa-solid fa-diagram-project" }, // seen in repos (gym-ai-assistant)
+  { name: "PyTorch & computer vision", cat: "ai", level: 3, years: 1, icon: "fa-solid fa-eye" },    // seen in repos (docsort-ai)
   { name: "FastAPI",        cat: "backend",  level: 4, years: 1, icon: "fa-solid fa-bolt" },        // seen in repos (gym-ai-assistant)
   { name: "HTML & CSS",     cat: "frontend", level: 5, years: 4, icon: "fa-brands fa-html5" },      // seen in repos
   { name: "JavaScript",     cat: "frontend", level: 5, years: 4, icon: "fa-brands fa-js" },         // seen in repos
@@ -95,6 +96,32 @@ window.PROJECTS = [
       { src: "assets/img/projects/gym-ai-mobile.webp", caption: "On a phone" },
     ],
     cover: { kind: "code", hue: 22 },
+  },
+  {
+    title: "DocSort AI",
+    tagline: "Sorts scanned documents with a model I trained, then reads their fields",
+    cat: ["ai", "web"], year: 2026,
+    summary: "Drop in a pile of scans: a document classifier I trained sorts them into 7 types, Gemini reads the key fields — totals, dates and line items from receipts and invoices, sender and a summary from the rest — and everything exports to Excel.",
+    problem: "Offices still sort and re-type paperwork by hand. Sending every page to a large AI model is slow and costs money for each page, and it is not even the most accurate way to sort.",
+    solution: "I fine-tuned an ImageNet-pretrained MobileNetV3 in PyTorch on 4,500 pages from two public datasets (RVL-CDIP office scans and CORD receipt photos), in two phases: first only a new 7-class head, then the whole network. Every page is converted to grayscale the same way so the model learns layout, not \"photo vs. scan\". It reaches 89% on 1,120 unseen test pages and runs offline in about 60 ms per page. On the same pages it beat asking Gemini directly (89% vs 84%) while being ~37× faster — so the LLM is used only for what it is good at: reading the fields, into a Pydantic schema per document type. On 100 labelled receipt photos it got the total exactly right 97% of the time. A FastAPI service and a Streamlit page wrap it all, with upload validation, prompt-injection rules and protection against spreadsheet formula injection in the Excel export.",
+    highlights: [
+      "Trained my own classifier: 89% accuracy on 1,120 unseen pages, ~60 ms on CPU",
+      "Beats zero-shot Gemini at sorting (89% vs 84%) and is ~37× faster",
+      "Gemini vision field extraction: 97% exact totals on 100 labelled receipts",
+      "Excel export with formula-injection protection; PDF and image uploads",
+      "Measured honestly: confusion matrix, error analysis, no tuning on the test set",
+      "FastAPI + Streamlit, Docker Compose, 15 offline tests",
+    ],
+    stack: ["Python", "PyTorch", "Transfer learning", "Gemini API", "scikit-learn", "FastAPI", "Streamlit", "openpyxl", "Docker"],
+    keywords: "document classification ocr scan scanned receipt invoice extraction excel computer vision cnn mobilenet pytorch deep learning transfer learning rvl-cdip gemini vision rpa automation",
+    links: { live: "", code: "https://github.com/omar122211/docsort-ai" },
+    image: "assets/img/projects/docsort.webp", // real screenshots of the Streamlit page (run with Docker)
+    gallery: [
+      { src: "assets/img/projects/docsort-app.webp", caption: "A batch of sample pages sorted, with the Excel export" },
+      { src: "assets/img/projects/docsort-confusion.webp", caption: "Test-set confusion matrix: forms vs. invoices are the hard pair" },
+      { src: "assets/img/projects/docsort-mobile.webp", caption: "On a phone" },
+    ],
+    cover: { kind: "code", hue: 200 },
   },
   {
     title: "Forge",
