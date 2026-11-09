@@ -19,12 +19,11 @@ window.SITE = {
 };
 
 /* level: 1-5   years: how long you've used it
-   cat: frontend | backend | mobile | ai | devops
+   cat: ai | frontend | backend | devops
    Skills marked "seen in repos" are backed by projects on GitHub. */
 window.SKILLS = [
   { name: "scikit-learn",   cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-chart-line" },  // coursework (Karabük University)
   { name: "pandas & NumPy", cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-table" },       // coursework (Karabük University)
-  { name: "ML Kit",         cat: "ai",       level: 3, years: 1, icon: "fa-solid fa-person-running" }, // seen in repos
   { name: "LLM APIs",       cat: "ai",       level: 4, years: 2, icon: "fa-solid fa-robot" },
   { name: "RAG & embeddings", cat: "ai",     level: 4, years: 1, icon: "fa-solid fa-magnifying-glass" }, // seen in repos (gym-ai-assistant)
   { name: "LangGraph agents", cat: "ai",     level: 3, years: 1, icon: "fa-solid fa-diagram-project" }, // seen in repos (gym-ai-assistant)
@@ -48,9 +47,6 @@ window.SKILLS = [
   { name: "Auth & OAuth",   cat: "backend",  level: 4, years: 2, icon: "fa-solid fa-user-shield" }, // seen in YelpCamp (Passport, Google/Facebook)
   { name: "Stripe Payments", cat: "backend", level: 3, years: 1, icon: "fa-brands fa-stripe" },     // seen in YelpCamp
   { name: "C & Networking", cat: "backend",  level: 3, years: 2, icon: "fa-solid fa-network-wired" }, // seen in repos
-  { name: "Kotlin",         cat: "mobile",   level: 4, years: 1, icon: "fa-brands fa-android" },    // seen in repos
-  { name: "Jetpack Compose", cat: "mobile",  level: 4, years: 1, icon: "fa-solid fa-mobile-screen" }, // seen in repos
-  { name: "Room & CameraX", cat: "mobile",   level: 3, years: 1, icon: "fa-solid fa-camera" },      // seen in repos
   { name: "Git & GitHub",   cat: "devops",   level: 5, years: 4, icon: "fa-brands fa-github" },     // seen in repos
   { name: "GitHub Actions", cat: "devops",   level: 3, years: 1, icon: "fa-solid fa-infinity" },    // seen in repos
   { name: "Linux",          cat: "devops",   level: 4, years: 3, icon: "fa-brands fa-linux" },
@@ -61,12 +57,11 @@ window.SKILL_CATS = {
   ai: "AI & ML",
   frontend: "Frontend",
   backend: "Backend & Data",
-  mobile: "Mobile",
   devops: "DevOps & Tools",
 };
 
 /* PROJECTS — from github.com/omar122211. Newest first; the first one with featured: true gets the big card.
-   cat: one or more of  mobile | ai | web | systems
+   cat: one or more of  ai | web | systems
    private: true  → shows "Code private" instead of a code link
    cover.kind: phone | map | camp | terminal | notebook | code   (or add  image: "assets/img/projects/x.webp")
    highlights: short bullet points shown on the card and in the case study */
@@ -181,7 +176,7 @@ window.PROJECTS = [
     title: "Forge",
     tagline: "A Solo Leveling–style fitness app that punishes skipped workouts",
     featured: true,
-    cat: ["mobile", "ai"], year: 2026, private: true,
+    cat: ["ai"], year: 2026, private: true,
     summary: "An Android app that turns daily workouts into RPG quests. The camera counts your reps with AI pose detection — and if you skip your quests, Instagram gets locked for 24 hours.",
     problem: "Fitness apps are easy to ignore: closing them costs nothing, so streaks die and habits never stick.",
     solution: "A native Android app in Kotlin and Jetpack Compose, inspired by the anime Solo Leveling. Every day you get quests — push-ups, sit-ups, squats and a run — sized to your fitness level. The camera verifies each rep with Google ML Kit pose detection, and runs are tracked with GPS. Completing quests earns XP, levels and stat points (STR, AGI, VIT). Miss them by midnight and the penalty starts: an accessibility service blocks Instagram and any other apps you chose, for 24 hours. Progress lives in a local Room database and syncs to the cloud with Supabase accounts.",
@@ -293,7 +288,7 @@ window.PROJECTS = [
   },
 ];
 
-window.PROJECT_CATS = { all: "All", mobile: "Mobile", ai: "AI & ML", web: "Web", systems: "Systems" };
+window.PROJECT_CATS = { all: "All", ai: "AI & ML", web: "Web", systems: "Systems" };
 
 /* EXPERIENCE — newest first.
    where: company / school — leave "" and nothing is shown. */
@@ -302,7 +297,7 @@ window.EXPERIENCE = [
     when: "Jul 2022 — Now",
     role: "Freelance Full-stack Web Developer",
     where: "",
-    text: "Building full-stack web applications for clients across different industries with React, Next.js, Node.js and Express — from the UI/UX to the back-end APIs, with clean, maintainable code delivered on time. Lately also Android apps with on-device AI.",
+    text: "Building full-stack web applications for clients across different industries with React, Next.js, Node.js and Express — from the UI/UX to the back-end APIs, with clean, maintainable code delivered on time. Since 2026 focused on AI engineering: RAG assistants, NLP and computer vision.",
     tags: ["React", "Next.js", "Node.js", "Express", "MongoDB"],
   },
   {

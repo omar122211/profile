@@ -103,9 +103,10 @@
     "RAG & Vector DBs": "rag vector embedding retrieval pinecone pgvector", "PyTorch": "torch deep learning",
     "Hugging Face": "huggingface transformer", "CI/CD": "cicd pipeline github action", "Docker": "container",
     "Linux & Nginx": "linux nginx server vps", "REST & GraphQL": "rest graphql api", "Tailwind CSS": "tailwind",
-    "HTML & CSS": "html css", "Git & GitHub": "git github", "Kotlin": "android kotlin",
-    "Jetpack Compose": "compose android ui", "Room & CameraX": "room camerax camera sqlite", "scikit-learn": "sklearn scikit",
-    "pandas & NumPy": "pandas numpy dataframe", "ML Kit": "mlkit pose detection vision", "Supabase": "supabase auth",
+    "HTML & CSS": "html css", "Git & GitHub": "git github", "scikit-learn": "sklearn scikit",
+    "pandas & NumPy": "pandas numpy dataframe", "Supabase": "supabase auth",
+    "RAG & embeddings": "rag retrieval embeddings vector chroma", "LangGraph agents": "langgraph agent agents tools",
+    "PyTorch & computer vision": "pytorch torch vision cnn image pose deep learning", "NLP & transformers": "nlp transformer bert sentiment text",
     "C & Networking": "c socket sockets tcp network networking pthread threads",
     "Auth & OAuth": "auth authentication login signup oauth passport google facebook session", "Stripe Payments": "stripe payment payments checkout", "PHP": "php", "MySQL": "mysql mariadb sql", "GitHub Actions": "github action ci cd cicd pipeline workflow",
   };
@@ -125,7 +126,7 @@
   Object.entries(PROJECT_CATS).filter(([k]) => k !== "all").forEach(([k, label]) => {
     const ps = PROJECTS.map((p, i) => ({ p, i })).filter(({ p }) => catsOf(p).includes(k));
     if (!ps.length) return;
-    const extra = { ai: "ml llm machine learning", mobile: "android app phone kotlin", systems: "low level network c", web: "website site" }[k] || "";
+    const extra = { ai: "ml llm machine learning", systems: "low level network c", web: "website site" }[k] || "";
     add(`${label} projects`, `${label} ${k} project`, `${k} ${label} project ${extra}`,
       `My ${esc(label)} projects: ` + ps.map(({ p }) => `<b>${esc(p.title)}</b> — ${esc(p.summary)}`).join("<br>"),
       ps.slice(0, 3).map(({ i }) => projBtn(i)));
@@ -148,7 +149,7 @@
   });
 
   add("What I do", "service offer help frontend backend ai devops", "service offer help hire freelance build build client",
-    `I can help with: <b>web apps</b> (fast, animated interfaces plus Node.js/Express backends and databases), <b>Android apps</b> (Kotlin + Jetpack Compose with camera, GPS and cloud sync), and <b>AI features</b> (on-device vision like pose detection, machine-learning models, LLM-powered tools).`,
+    `I can help with: <b>AI features</b> (RAG assistants and agents, NLP, computer-vision models I train and evaluate) and the <b>web apps</b> around them (fast interfaces plus Python/Node.js backends and databases).`,
     [goto("contact", "Start a project")]);
 
   const mail = safeEmail(L.email), li = safeUrl(L.linkedin), gh = safeUrl(L.github);
@@ -272,7 +273,7 @@
 
   form.addEventListener("submit", (e) => { e.preventDefault(); ask(input.value); input.value = ""; });
 
-  const SUGGESTIONS = ["Tell me about Forge", "What's your stack?", "Show me your AI projects", "Do you know Kotlin?", "What can you build for me?", "How can I contact you?"];
+  const SUGGESTIONS = ["Show me your AI projects", "Tell me about Form Coach", "How do you evaluate your models?", "What's your stack?", "What can you build for me?", "How can I contact you?"];
   chips.innerHTML = SUGGESTIONS.map((s) => `<button type="button">${esc(s)}</button>`).join("");
   chips.addEventListener("click", (e) => {
     const b = e.target.closest("button");
