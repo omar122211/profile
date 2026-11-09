@@ -152,6 +152,32 @@ window.PROJECTS = [
     cover: { kind: "code", hue: 140 },
   },
   {
+    title: "Form Coach",
+    tagline: "AI rep counter & form checker that runs entirely in your browser",
+    cat: ["ai", "web"], year: 2026,
+    summary: "Point your camera at yourself and it recognises the exercise, counts your reps and gives a form tip after every rep — all on-device, so the video never leaves your browser. The open, measured version of the rep counting in my Forge app.",
+    problem: "Fitness apps either count reps badly or send your camera feed to a server. And general AI video models turn out to be poor at counting reps.",
+    solution: "MediaPipe Pose (WebAssembly) finds 33 body points 10 times a second. From them I compute joint angles and body-relative positions, and a small neural network I trained in PyTorch recognises squats, push-ups, curls and presses from 2-second windows — 97.5% of real test videos correct (the MLP beat a 1D-CNN; adding 12 real videos per exercise to 400 synthetic ones lifted accuracy from 80%). Reps are counted from one movement signal with detrending and two adaptive thresholds, tuned on a separate slice of PushUpBench: on unseen clips it gets 42% exactly right and 67% within one rep, against 3% and 15% for Gemini given the same videos. Form cues come from joint angles, with thresholds calibrated on real trainer videos so correct reps rarely get flagged. The whole pipeline is re-implemented in plain JavaScript (parity-tested against Python) and served from GitHub Pages under a strict CSP — which even blocks MediaPipe's own telemetry.",
+    highlights: [
+      "Live demo: camera, video upload or skeleton replay — nothing leaves the browser",
+      "Exercise classifier I trained: 97.5% of unseen real videos (39/40)",
+      "Rep counting beats Gemini on PushUpBench: 42% vs 3% exact, 67% vs 15% within one",
+      "Form cues calibrated on trainer videos, false alarms measured",
+      "Python ↔ JavaScript parity tests; strict CSP, self-hosted WebAssembly",
+      "Honest limits: push-ups and very fast moves are the weak spots",
+    ],
+    stack: ["Python", "PyTorch", "MediaPipe", "Computer vision", "JavaScript", "WebAssembly", "Canvas", "scikit-learn", "Gemini API"],
+    keywords: "pose estimation rep counter form checker fitness workout squat push up curl press camera mediapipe on-device webassembly browser privacy computer vision forge pushupbench",
+    links: { live: "https://omar122211.github.io/form-coach/", code: "https://github.com/omar122211/form-coach" },
+    image: "assets/img/projects/form-coach.webp", // real screenshots of the live demo (skeleton replay — no one's video)
+    gallery: [
+      { src: "assets/img/projects/form-coach-vs-gemini.webp", caption: "Rep counting vs Gemini on the same 60 real clips" },
+      { src: "assets/img/projects/form-coach-curls.webp", caption: "Biceps-curl set: exercise detected, reps counted, every rep checked" },
+      { src: "assets/img/projects/form-coach-mobile.webp", caption: "On a phone" },
+    ],
+    cover: { kind: "code", hue: 25 },
+  },
+  {
     title: "Forge",
     tagline: "A Solo Leveling–style fitness app that punishes skipped workouts",
     featured: true,
