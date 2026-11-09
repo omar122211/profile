@@ -29,6 +29,7 @@ window.SKILLS = [
   { name: "RAG & embeddings", cat: "ai",     level: 4, years: 1, icon: "fa-solid fa-magnifying-glass" }, // seen in repos (gym-ai-assistant)
   { name: "LangGraph agents", cat: "ai",     level: 3, years: 1, icon: "fa-solid fa-diagram-project" }, // seen in repos (gym-ai-assistant)
   { name: "PyTorch & computer vision", cat: "ai", level: 3, years: 1, icon: "fa-solid fa-eye" },    // seen in repos (docsort-ai)
+  { name: "NLP & transformers", cat: "ai",   level: 3, years: 1, icon: "fa-solid fa-language" },    // seen in repos (review-intelligence)
   { name: "FastAPI",        cat: "backend",  level: 4, years: 1, icon: "fa-solid fa-bolt" },        // seen in repos (gym-ai-assistant)
   { name: "HTML & CSS",     cat: "frontend", level: 5, years: 4, icon: "fa-brands fa-html5" },      // seen in repos
   { name: "JavaScript",     cat: "frontend", level: 5, years: 4, icon: "fa-brands fa-js" },         // seen in repos
@@ -122,6 +123,33 @@ window.PROJECTS = [
       { src: "assets/img/projects/docsort-mobile.webp", caption: "On a phone" },
     ],
     cover: { kind: "code", hue: 200 },
+  },
+  {
+    title: "YelpCamp Review Intelligence",
+    tagline: "NLP that tells campground owners what campers really say",
+    cat: ["ai", "web"], year: 2026,
+    summary: "An NLP service for my YelpCamp platform: sentiment for every review, opinions on five aspects (cleanliness, value, location, facilities, quiet) backed by quotes, a pros-and-cons summary that cites its reviews, search by meaning, and polite owner-reply drafts.",
+    problem: "A campground with hundreds of reviews can't read them all, star averages hide why people are unhappy, and a general chatbot summary can quietly make things up.",
+    solution: "I compared four ways to read sentiment on the same real, human-written reviews (200k TripAdvisor reviews where each reviewer also rated cleanliness, value, location, rooms and sleep — human labels per aspect), with balanced classes and no reviewer in both training and test. TF-IDF + logistic regression reached 78%, frozen MiniLM sentence embeddings 73%, and MiniLM fine-tuned by me in PyTorch 79.4% — slightly ahead of zero-shot Gemini on the same reviews, ~20× faster and free, so it runs on every review. Aspects are where the LLM earns its cost: Gemini lists only the aspects a review mentions, with a quote, and agrees with the reviewers' own aspect ratings 81–97% of the time. Quotes must appear word-for-word in the review and summary points must cite real review numbers, otherwise they are dropped — so the AI can't invent evidence.",
+    highlights: [
+      "Fine-tuned MiniLM: 79.4% on balanced real reviews, 46 ms on CPU — beats zero-shot Gemini",
+      "Honest baselines: TF-IDF 78% beat frozen embeddings 73%",
+      "Aspect opinions with exact quotes: 81–97% agreement with reviewers' own aspect ratings",
+      "Cited pros/cons summaries; invented quotes and citations are filtered out",
+      "Semantic search over reviews and owner-reply drafts with guardrails",
+      "FastAPI + Streamlit, Docker (models baked in, runs offline), 11 offline tests",
+    ],
+    stack: ["Python", "PyTorch", "Transformers", "Fine-tuning", "sentence-transformers", "scikit-learn", "Gemini API", "FastAPI", "Streamlit", "Docker"],
+    keywords: "nlp sentiment analysis reviews aspect based sentiment absa transformer fine-tuning bert minilm tf-idf embeddings semantic search summarization yelpcamp campground hotel tripadvisor",
+    links: { live: "", code: "https://github.com/omar122211/review-intelligence" },
+    image: "assets/img/projects/review-intel.webp", // real screenshots of the dashboard (run with Docker; demo reviews are AI-generated)
+    gallery: [
+      { src: "assets/img/projects/review-intel-analyze.webp", caption: "Analyse a review: local sentiment, aspects with quotes, owner reply draft" },
+      { src: "assets/img/projects/review-intel-aspects.webp", caption: "Aspect breakdown for a campground" },
+      { src: "assets/img/projects/review-intel-search.webp", caption: "Search reviews by meaning" },
+      { src: "assets/img/projects/review-intel-mobile.webp", caption: "On a phone" },
+    ],
+    cover: { kind: "code", hue: 140 },
   },
   {
     title: "Forge",
