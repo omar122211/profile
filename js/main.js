@@ -87,9 +87,10 @@
   });
 
   /* ---------- tabs helper ---------- */
-  function makeTabs(container, options, onChange) {
-    container.innerHTML = Object.entries(options).map(([k, label], i) =>
-      `<button role="tab" data-key="${esc(k)}" aria-selected="${i === 0}">${esc(label)}</button>`).join("");
+  function makeTabs(container, options, onChange, initial) {
+    const first = initial in options ? initial : Object.keys(options)[0];
+    container.innerHTML = Object.entries(options).map(([k, label]) =>
+      `<button role="tab" data-key="${esc(k)}" aria-selected="${k === first}">${esc(label)}</button>`).join("");
     container.addEventListener("click", (e) => {
       const b = e.target.closest("button");
       if (!b) return;
@@ -113,8 +114,9 @@
       </div>`).join("");
     vars(skillGrid);
   }
-  makeTabs($("#skill-tabs"), { all: "All", ...window.SKILL_CATS }, renderSkills);
-  renderSkills();
+  // AI & ML is shown first; "All" is one click away
+  makeTabs($("#skill-tabs"), { all: "All", ...window.SKILL_CATS }, renderSkills, "ai");
+  renderSkills("ai");
 
   /* ---------- terminal ---------- */
   const out = $("#term-out"), input = $("#term-input"), termBody = $("#term-body");
