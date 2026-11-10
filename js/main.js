@@ -328,7 +328,7 @@
           `<figure><img src="${esc(safeUrl(g.src))}" alt="${esc(g.caption || "")}" loading="lazy"><figcaption>${esc(g.caption || "")}</figcaption></figure>`).join("")}</div>` : ""}
         <h4>Stack</h4>
         <ul class="tags">${p.stack.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
-        <div class="modal-links">${link(p.links?.live, "Live demo", "fa-solid fa-arrow-up-right-from-square")}${link(p.links?.code, "Source code", "fa-brands fa-github")}${p.private ? `<span class="private-note"><i class="fa-solid fa-lock"></i> Source code is private — happy to walk through it in an interview.</span>` : ""}</div>
+        <div class="modal-links">${link(p.links?.live, "Live demo", "fa-solid fa-arrow-up-right-from-square")}${link(p.links?.code, "Source code", "fa-brands fa-github")}${p.liveNote && safeUrl(p.links?.live) ? `<span class="private-note"><i class="fa-solid fa-hourglass-half"></i> ${esc(p.liveNote)}</span>` : ""}${p.private ? `<span class="private-note"><i class="fa-solid fa-lock"></i> Source code is private — happy to walk through it in an interview.</span>` : ""}</div>
       </div>`;
     vars(modalContent);
     modal.showModal();
